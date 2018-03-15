@@ -44,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Sert à récuprer les éléments lors de la fin (retour) de GameActivity.
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == MainActivity.extra_int) {
@@ -58,14 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
             Toast toast = Toast.makeText(getApplicationContext(), "Score: " + String.valueOf(sc.getNombrePoint()) + " | Rate: " + String.valueOf(sc.getNombreRate()) , Toast.LENGTH_SHORT);
             toast.show();
-
-//            Score sc = new Score();
-//            String strg = String.valueOf("score");
-//            int a = (int)data.getSerializableExtra(strg);
-//            sc.setNombrePoint(a);
-//            sessionGame.addScore(sc);
-//            Toast toast = Toast.makeText(getApplicationContext(), "Score: " + String.valueOf(sc.getNombrePoint()), Toast.LENGTH_SHORT);
-//            toast.show();
         }
     }
 }

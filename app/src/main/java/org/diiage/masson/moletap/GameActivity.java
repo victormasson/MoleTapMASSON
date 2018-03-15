@@ -81,7 +81,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
+    /**
+     * Sert à savoir quel bouton a été appuié.
+     * @param view
+     */
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -118,6 +121,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         displayNoneAll();
     }
 
+    /**
+     * Sert à ajouter le score et le nombre de rate.
+     * @param idToCheck
+     * @param idCurrent
+     * @return
+     */
     public boolean checkAddScoreButtonPressed(int idToCheck, int idCurrent){
         ImageButton imToCheck = findViewById(idToCheck);
         if (imToCheck.getId() == idCurrent){
@@ -131,6 +140,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     * Sert à démarer le timer.
+     */
     protected void startTimer() {
         boolean isTimerRunning = true;
         timer = new Timer();
@@ -152,6 +164,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }, 0, 1000);
     }
 
+    /**
+     * Sert à faire afficher pour le timer les infos dans les textviews et à changer l'état des taupes.
+     */
     @SuppressLint("HandlerLeak")
     public static Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
@@ -162,6 +177,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
     };
 
+    /**
+     * Change l'état d'une taupe aléatoire.
+     */
     public static void changeTaupe(){
         int i = nextInt(0, buttons.size()-1);
         ImageButton b = (ImageButton) buttons.get(i);
@@ -169,11 +187,20 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         isDisplayCurrent = b.getId();
     }
 
+    /**
+     * Aléatoire.
+     * @param origin
+     * @param bound
+     * @return
+     */
     static int nextInt(int origin, int bound) {
         Random rand = new Random();
         return rand.nextInt((bound - origin) + 1) + origin;
     }
 
+    /**
+     * Sert à cacher tous les boutons.
+     */
     static void displayNoneAll(){
         for (ImageButton ib : buttons){
             ib.setImageDrawable(null);
