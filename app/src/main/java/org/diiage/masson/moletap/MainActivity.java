@@ -39,9 +39,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ScoreActivity.class);
 //                sessionGame.addScore();
                 intent.putExtra(extra_message, sessionGame);
-                startActivityForResult(intent, MainActivity.extra_int);
+                startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     /**

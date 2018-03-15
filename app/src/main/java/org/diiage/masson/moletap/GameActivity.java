@@ -140,6 +140,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        timer.cancel();
+        Intent intent = new Intent(GameActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
     /**
      * Sert à démarer le timer.
      */
