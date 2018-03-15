@@ -73,10 +73,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             add(mole9);
         }};
 
-
 //        Intent intent = getIntent();
 //        session = (Session) getIntent().getExtras().getParcelable(MainActivity.extra_message);
-
 
         displayNoneAll();
         startTimer();
