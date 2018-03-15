@@ -128,7 +128,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             return true;
         }
         else{
-//            score.addToRate();
+            score.addToRate();
             return false;
         }
     }
@@ -163,26 +163,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             changeTaupe();
         }
     };
-
-//    protected void startTimerTaupe() {
-//        timer.scheduleAtFixedRate(new TimerTask() {
-//            public void run() {
-//                monChrono = Integer.parseInt(txtChrono.getText().toString());
-//                monChrono -= 1;
-//                mHandler.obtainMessage(1).sendToTarget();
-//            }
-//        }, 0, 1000);
-//    }
-//
-//    @SuppressLint("HandlerLeak")
-//    public static Handler mHandler = new Handler() {
-//        public void handleMessage(Message msg) {
-//            txtChrono.setText(String.valueOf(monChrono));
-//            txtScore.setText(String.valueOf(score.getNombrePoint()));
-//            displayNoneAll();
-//            changeTaupe();
-//        }
-//    };
 
     public static void changeTaupe(){
         int i = nextInt(0, buttons.size()-1);
